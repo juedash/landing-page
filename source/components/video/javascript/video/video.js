@@ -178,6 +178,7 @@ function bindPlayerEvents(options) {
   })
 
   Events.$on(`video[${options.instanceId}]::pause`, () => {
+    console.log(options.element)
     options.element.playerInstance.pause()
   })
 

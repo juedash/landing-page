@@ -75,11 +75,16 @@
     </div>
 
     {{ button( {
+      element: 'button',
       class: 'hero__cta',
       label: 'Subscribe to newsletter',
       url: '#',
       variant: 'secondary',
-      icon: 'chevron-right'
+      icon: 'chevron-right',
+      controls: 'newsletter-modal',
+      hook: 'video-pause'
     } ) }}
+
   </div>
+
 </div>

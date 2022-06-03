@@ -44,5 +44,8 @@
   },
   "devDependencies": {
     "tamtam-frontend-builder": "git+https://bitbucket.org/tamtam-nl/tamtam-frontend-builder.git#dev-1.4"
+  },
+  "dependencies": {
+    "ignore-errors": "^2.0.0"
   }
 }

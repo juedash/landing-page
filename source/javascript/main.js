@@ -11,6 +11,8 @@ import '@components/image'
 
 import VideoLoader from '@components/video/loader'
 
+import '../components/newsletter/javascript/index'
+
 // !! Look closely at the examples to know how to use moduleInit + modular approach
 // Sync example
 // import moduleInit from '@utilities/module-init'
@@ -27,4 +29,4 @@ VideoLoader.then(([Platforms, Video]) => {
     youtube: Platforms.Youtube,
     vimeo: Platforms.Vimeo,
   })
-}).catch(() => {})
+}).catch(() => { })

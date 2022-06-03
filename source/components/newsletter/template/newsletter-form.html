@@ -1,0 +1,91 @@
+{% import 'form-elements.html' as form %}
+{% macro newsletterForm(data) %}
+{% from 'button.html' import button %}
+
+{% call form.form({
+        method: 'post',
+        attr: 'id = "formElem"'
+    }) 
+%}
+
+    {{ form.input({
+        name: 'email',
+        id: 'email',
+        type:'email',
+        label: 'Email',
+        labelAsPlaceholder: true,
+        required: true,
+        attr: 'onclick="emailSelected()"'
+    }) }}
+    <div class="o-grid newsletter-fields--hidden" id="newsletter-user-data">
+        <div class="o-col-2 o-col-4--md o-col-6--lg">
+    {{ form.input({
+        name: 'firstName',
+        id: 'firstName',
+        label: 'First Name',
+        labelAsPlaceholder: true
+    }) }}
+    </div>
+    
+    <div class="o-col-2 o-col-4--md o-col-6--lg">
+    
+    {{ form.input({
+        name: 'lastName',
+        id: 'lastName',
+        label: 'Last Name',
+        labelAsPlaceholder: true
+    }) }}
+    
+    </div>
+    </div>
+    
+    <div class="o-grid">
+        <div class="o-col-2 o-col-4--md o-col-6--lg">
+            {{ button( {
+                element: 'button',
+                class: 'back-button',
+                label: 'Back',
+                url: '#',
+                variant: 'ghost',
+                icon: 'chevron-left'
+              } ) }}
+            </div>
+            <div class="o-col-2 o-col-4--md o-col-6--lg">
+                {{ button( {
+                    element: 'button',
+                    type: 'submit',
+                    class: 'back-button',
+                    label: 'Submit',
+                    url: '#',
+                    variant: 'secondary',
+                    icon: 'chevron-right'
+                  } ) }}
+    </div>
+    
+    </div>
+    
+    {% endcall %}  
+
+
+<script>
+    function emailSelected(){
+        var element = document.getElementById("newsletter-user-data");
+        element.classList.remove("newsletter-fields--hidden");
+    }
+
+    
+    formElem.onsubmit = async (e) => {
+    e.preventDefault();
+    let randomResponse =  Math.floor(Math.random() * 3);
+    let statusCode = ['200', '403', '500']
+    let response = await fetch(`https://httpbin.org/status/${statusCode[randomResponse]}`, {
+      method: 'POST',
+      body: new FormData(formElem)
+    });
+
+    let result = await response.json();
+
+    alert(result);
+  };
+</script>
+{% endmacro %}

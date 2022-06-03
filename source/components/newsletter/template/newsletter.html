@@ -1,0 +1,12 @@
+{% from 'modal.html' import modal %}
+{% from 'newsletter-form.html' import newsletterForm %}
+
+<div class="hero-newsletter-modal">
+    {% call modal({
+        id : 'newsletter-modal'
+    }) %}
+    <h1>Subscribe to newsletter</h1>
+        {{newsletterForm()}}   
+            
+    {% endcall %}  
+</div>

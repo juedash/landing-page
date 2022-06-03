@@ -1,0 +1,16 @@
+.hero-newsletter-modal {
+    .modal__container{
+        .modal__button-close {
+            color: $color-white;
+            background-color: $color-black;
+            border-radius: 50%;
+            padding: $global-spacing $global-spacing * 2;
+            font-size: 30px;
+            top: -10px;
+        }
+
+        .newsletter-fields--hidden{
+            display: none;
+        }
+    }
+}
