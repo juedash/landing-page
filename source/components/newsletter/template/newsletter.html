@@ -1,12 +1,34 @@
 {% from 'modal.html' import modal %}
+{% from 'button.html' import button %}
 {% from 'newsletter-form.html' import newsletterForm %}
 
 <div class="hero-newsletter-modal">
     {% call modal({
         id : 'newsletter-modal'
     }) %}
-    <h1>Subscribe to newsletter</h1>
-        {{newsletterForm()}}   
+        <div id="newsletterForm">
+            <h2>Subscribe to newsletter</h3>
+
+            {{newsletterForm()}}   
+        </div>
+        <div id="succesMessage" class="hidden">
+            <h3>There were some errors on sending the form!</h3>
+            {{ button( {
+                element: 'button',
+                class: 'back-button',
+                label: 'Back to form',
+                url: '#',
+                variant: 'ghost',
+                icon: 'chevron-left',
+                attr: 'onclick="backToForm()"'
+              } ) }}
+        </div>
             
     {% endcall %}  
 </div>
+
+<script>
+    function backToForm() {
+        document.getElementById("newsletterForm").style.display = "block";
+}
+</script>

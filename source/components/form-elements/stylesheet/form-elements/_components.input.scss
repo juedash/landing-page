@@ -44,6 +44,8 @@ $input-transition-ease: $ease-in-out-quad;
     .form__item--error & {
         box-shadow: 0 0 0 $input-border-width $input-error-color inset;
     }
+
+
 }
 
 .input__wrapper {
@@ -67,3 +69,4 @@ $input-transition-ease: $ease-in-out-quad;
         }
     }
 }
+

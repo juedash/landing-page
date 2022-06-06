@@ -1,3 +1,22 @@
 textarea {
   resize: none;
 }
+
+input{
+&:focus-visible::-webkit-input-placeholder {
+  opacity: 0;
+}
+&:focus-visible::-moz-placeholder {
+  opacity: 0;
+ }
+ &:focus-visible:-ms-input-placeholder {
+  opacity: 0;
+}
+
+&:focus-visible:-moz-placeholder {
+ opacity: 0;
+}
+}
+
+
+

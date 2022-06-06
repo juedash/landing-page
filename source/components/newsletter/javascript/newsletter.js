@@ -20,7 +20,6 @@ class Newsletter {
       video.playerInstance.play()
       console.log('test')
     })
-
   }
 }
 

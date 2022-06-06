@@ -1,16 +1,53 @@
 .hero-newsletter-modal {
-    .modal__container{
+  .modal--is-showing {
+    .modal__container {
+      @media (min-width: 1024px) {
+        width: 60%;
+      }
+      .modal__content {
+        padding: $global-spacing * 4 $global-spacing * 3;
         .modal__button-close {
-            color: $color-white;
-            background-color: $color-black;
-            border-radius: 50%;
-            padding: $global-spacing $global-spacing * 2;
-            font-size: 30px;
-            top: -10px;
+          color: $color-white;
+          background-color: $color-black;
+          border-radius: 50%;
+          font-size: 25px;
+          height: 35px;
+          width: 35px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          //   top: -15px;
+          //   right: -15px;
         }
 
-        .newsletter-fields--hidden{
-            display: none;
+        .newsletter-fields--hidden {
+          display: none;
         }
+
+        .hidden {
+          display: none;
+        }
+
+        .show {
+          display: block;
+        }
+
+        button {
+          &.submit-button {
+            background-color: #ff5454;
+          }
+          &.back-button {
+            padding-left: $global-spacing * 4;
+            .button__icon {
+              left: $button-spacing * 1.5;
+            }
+          }
+        }
+      }
     }
+
+    .modal__background {
+      background-color: rgba($color-black, 0.3);
+    }
+  }
 }
